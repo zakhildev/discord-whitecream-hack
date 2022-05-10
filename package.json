@@ -11,7 +11,7 @@
   "author": "Zakhil",
   "license": "MIT",
   "engines": {
-    "node": ">=16"
+    "node": "==17"
   },
   "dependencies": {
     "express": "^4.17.1"
