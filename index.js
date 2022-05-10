@@ -1,11 +1,13 @@
 const express = require('express');
+const path = require('node:path');
 
 const app = express();
+app.use('/static', express.static(path.join(__dirname, 'resources')));
 
 app.get('/', async (req, res) => {
   res.status(200).json(
     {
-      ip: req.ip
+      message: 'Hello World'
     }
   );
 });
