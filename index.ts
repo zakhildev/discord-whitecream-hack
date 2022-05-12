@@ -17,7 +17,7 @@ const extractGif = async (url: string): Promise<string> => {   // Function to ex
 }
 
 app.get('/view/:id', async (req, res) => {
-  if (fs.existsSync(join(__dirname + `/results/${req.params.id}.png`))) {
+  if (fs.existsSync(join(__dirname + '/results' + `${req.params.id}.png`))) {
     res.status(200).sendFile(`./results/${req.params.id}.png`, { root: __dirname });
     return;
   }
@@ -34,7 +34,7 @@ app.get('/view/:id', async (req, res) => {
   template.composite(whitecream, 0, 180);
   template.composite(text, 0, 160);
   template.write(`./results/${req.params.id}.png`, () => {
-    res.status(200).sendFile('/results/' + req.params.id + '.png', { root: __dirname });
+    res.status(200).sendFile('./results/' + req.params.id + '.png', { root: __dirname });
     return;
   });
 });

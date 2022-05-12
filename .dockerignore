@@ -1,2 +1,11 @@
 .dockerignore
 node_modules
+
+# Added to shrink size of the container image
+# also GCP backend is using compiled js files
+# ts file are just for development
+.eslintrc.yml
+.eslintignore
+.prettierrc.yml
+index.ts
+tsconfig.json
